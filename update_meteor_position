@@ -1,4 +1,4 @@
-#A non-void function with four parameters: the nested list
+# A non-void function with four parameters: the nested list
 of meteor positions, the height of the game screen, the score, and the speed of the meteors; it
 returns the integer score. For each meteor still in play, its y position should be increased by
 the meteor speed (pixels moved). Each meteor hitting the ground should be removed from the
