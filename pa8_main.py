@@ -1,5 +1,5 @@
 def main():
-    print('Hello World')
+    
     '''
     Initialize pygame and pygame parameters.  Note that both player and meteors
     are square.  Thus, player_dim and met_dim are the height and width of the
