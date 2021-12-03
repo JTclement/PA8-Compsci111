@@ -1,2 +1,9 @@
+# A non-void function with one parameter, an integer score, which returns the
+speed. The speed should be based on the score: the higher the score, the faster the speed should
+be. However, don’t set the speed to the score! Initially the score is zero, and if the speed is zero,
+the meteors won’t fall. Also, the speed is the number of pixels that each meteor “falls” at each
+update (updates occur about 30 times per second!), so if you set the speed to the score later, the
+meteor will move too fast for you to see it.
+
 def set_speed(int_score):
   speed = 
