@@ -1,1 +1,13 @@
+# A void function with three parameters: the nested list of meteor positions, the size of the meteors, and the width of the game screen. The meteors should be placed at
+the top of the screen (y position fixed at zero) at random positions along the width of the screen
+(x positions random, but meteors can’t overlap each other). Each time a meteor is placed, its
+location should be appended to the list of meteor positions. Finally, meteors should fall at random times. You should consider using the random() and randint() or randrange()
+functions in the random module when coding this function. Note that this function doesn’t
+actually drop the meteors, but it positions meteors along the top of the game screen so they
+can fall when their positions are updated by update meteor position(). However, to
+code this function correctly, you have to think of them falling at random times and at random
+positions along the x-axis. Otherwise, you’ll end up with a sheet of meteors falling at all times.
+Remember that the game screen is updated about 30 times per second which is fast!
 
+def drop_meters():
+  
