@@ -1,1 +1,6 @@
+# A void function with four parameters: the nested list of meteor positions
+(initially empty), the size of the meteors, the game screen, and the color of the meteors. A
+meteor should be drawn at each meteor position using the draw.rect() function in pygame.
 
+def draw_meteors():
+  
