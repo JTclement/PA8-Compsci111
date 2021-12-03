@@ -1,1 +1,11 @@
+# A non-void function with four parameters: the position (a list) of
+the player, the position (a list) of the meteor, the size of the player, and the size of the meteor.
+This function is called by collision check() and returns True if the meteor has hit the
+player or False if it hasn’t. Think carefully about how to check to determine whether or not
+the meteor has hit the player. Drawing some sketches will help. Note that the positions of the
+meteor and the player are measured from their top left corners (0,0). Note also that this
+function considers one meteor at a time; it only takes one meteor hitting the player for the
+player to die.
 
+def detect_collision():
+  
