@@ -1,9 +1,14 @@
 # A non-void function with four parameters: the nested list
-of meteor positions, the height of the game screen, the score, and the speed of the meteors; it
-returns the integer score. For each meteor still in play, its y position should be increased by
-the meteor speed (pixels moved). Each meteor hitting the ground should be removed from the
-nested list and the user’s score increased by one. Note that a meteor is either still in play or it
-has hit the ground.
+# of meteor positions, the height of the game screen, the score, and the speed of the meteors; it
+# returns the integer score. For each meteor still in play, its y position should be increased by
+# the meteor speed (pixels moved). Each meteor hitting the ground should be removed from the
+# nested list and the user’s score increased by one. Note that a meteor is either still in play or it
+# has hit the ground.
 
-def update_meteor_position():
-  
+def update_meteor_position(met_list, height, score, speed):
+  for each_meteor in screen:
+    y_position += 1
+  if y_position == (800, 600):
+    met_list.remove(meteor)
+    score += 1
+  return score
