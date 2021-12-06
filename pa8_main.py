@@ -2,12 +2,12 @@ import pygame as pyg
 import random
 
 
-def set_speed(score):
+def set_speed(f_score):
 
-    if score < 2:
+    if f_score < 2:
         speed = 100
     else:
-        speed = ((score // 2) * 50) + 100
+        speed = ((f_score // 2) * 50) + 100
     return speed
 
 def draw_meteors(met_list, met_dim, screen, yellow):
