@@ -4,10 +4,6 @@ import random
 
 def set_speed(f_score):
 
-    print(f_score)
-    print(type(f_score))
-    
-
     if f_score < 2:
         speed = 100
     else:
