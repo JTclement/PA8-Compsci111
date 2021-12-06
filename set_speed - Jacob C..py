@@ -16,7 +16,7 @@ def set_speed(score):
 
         speed = 100
     else:
-        speed = ((score // 2) * 50) + 10
+        speed = ((score // 2) * 50) + 100
     
     
         
