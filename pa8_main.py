@@ -1,3 +1,31 @@
+def set_speed(score):
+
+    if score < 2:
+        speed = 100
+    else:
+        speed = ((score // 2) * 50) + 100
+    return speed
+
+def draw_meteors(met_list, met_dim, screen, yellow):
+    for i in range(len(met_list)):
+        pyg.draw.rect(screen, yellow, (met_list[i], met_dim))
+        
+def drop_meteors(met_list, met_dim, width):
+    spawn_chance = randrange(0,100)
+    x_pos = randrange(0, 780)
+    if spawn_chance <= 1:
+        met_pos = [x_pos, 0]
+        met_list.append(met_pos)
+
+def update_meteor_postion(met_list, screen_height, score, met_speed):
+    pass
+
+def detect_collision(player_pos, player_dim, met_dim):
+    pass
+
+def collision_check(met_list, player_pos, player_dim, met_dim):
+    pass
+
 def main():
     
     '''
