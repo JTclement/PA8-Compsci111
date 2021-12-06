@@ -1,7 +1,11 @@
 # A non-void function with four parameters: the nested list of meteor
-positions, the position (a list) of the player, the size of the player, and the size of a meteor. This
-function calls detect collision() for each meteor, and if (and as soon as) a collision is
-detected, it returns True to main(). Otherwise, it returns False and the game continues.
+# positions, the position (a list) of the player, the size of the player, and the size of a meteor. This
+# function calls detect collision() for each meteor, and if (and as soon as) a collision is
+# detected, it returns True to main(). Otherwise, it returns False and the game continues.
 
-def collision_check():
-  
+def collision_check(met_list, player_pos, player_dim, met_dim):
+  detect_collision()
+  if:
+    return True
+  else:
+    return False
