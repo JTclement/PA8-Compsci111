@@ -4,6 +4,10 @@ import random
 
 def set_speed(f_score):
 
+    print(f_score)
+    print(type(f_score))
+    
+
     if f_score < 2:
         speed = 100
     else:
@@ -12,7 +16,7 @@ def set_speed(f_score):
 
 def draw_meteors(met_list, met_dim, screen, yellow):
     for i in range(len(met_list)):
-        pyg.draw.rect(screen, yellow, (met_list[i], met_dim))
+        pyg.draw.rect(screen, yellow, (met_list[i][0], met_list[i][1], met_dim, met_dim))
         
 def drop_meteors(met_list, met_dim, width):
     spawn_chance = random.randrange(0,100)
@@ -21,8 +25,17 @@ def drop_meteors(met_list, met_dim, width):
         met_pos = [x_pos, 0]
         met_list.append(met_pos)
 
-def update_meteor_positions(met_list, screen_height, score, met_speed):
-    pass
+def update_meteor_positions(met_list, height, score, speed):
+
+    for i in range(len(met_list)):
+
+        met_list[i][1] += speed
+
+        if met_list[i][1] == 580:
+
+            met_list.remove(met_list[i])
+            score += 1
+    return score
 
 def detect_collision(player_pos, player_dim, met_dim):
     pass
@@ -107,3 +120,4 @@ def main():
     pyg.quit()                                     # leave pygame
 
 main()
+
