@@ -39,11 +39,22 @@ def update_meteor_positions(met_list, height, score, speed):
             
     return score
 
-def detect_collision(player_pos, player_dim, met_dim):
-    pass
+def detect_collision(meteor, player_pos, player_dim, met_dim):
+    
+
+    if meteor[1] >= 480 and meteor[1] <= 550:
+
+        if meteor[0] <= player_pos[0] + 50 and meteor[0] >=player_pos[0]:
+
+            return True
+        else:
+            return False
+    
+    
+    
 
 def collision_check(met_list, player_pos, player_dim, met_dim):
-
+    
 
     for meteor in met_list:
 
@@ -54,6 +65,7 @@ def collision_check(met_list, player_pos, player_dim, met_dim):
             return True
         else:
             return False
+            
 
 def main():
     
@@ -132,3 +144,4 @@ def main():
     pyg.quit()                                     # leave pygame
 
 main()
+
