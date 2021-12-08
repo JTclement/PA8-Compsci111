@@ -1,3 +1,10 @@
+#Jacob Clement, Nick Gregarek, Trevor Cook, Andrew Arinas
+#12/7/2021
+#Programming Assignment #8
+#Meteor game. Dodge meteors as they fall to the player to get a high score.
+#The more meteors fall, the faster they get.
+
+
 import pygame as pyg
 import random
 
