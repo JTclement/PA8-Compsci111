@@ -11,10 +11,10 @@ import random
 def set_speed(f_score):
     '''Sets the speed of the meteors falling dependent on the score of the game.'''
 
-    if f_score < 2:
+    if f_score < 4:
         speed = 10
     else:
-        speed = ((f_score // 2) * 2) + 10
+        speed = ((f_score // 4) * 2) + 10
     return speed
 
 def draw_meteors(met_list, met_dim, screen, yellow):
