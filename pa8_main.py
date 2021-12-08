@@ -4,10 +4,9 @@
 #Meteor game. Dodge meteors as they fall to the player to get a high score.
 #The more meteors fall, the faster they get.
 
-
+# Imports modules needed to run program
 import pygame as pyg
 import random
-
 
 def set_speed(f_score):
     '''Sets the speed of the meteors falling dependent on the score of the game.'''
@@ -20,13 +19,16 @@ def set_speed(f_score):
 
 def draw_meteors(met_list, met_dim, screen, yellow):
     '''Draws the meteors according to their locations on the screen.'''
+    
     for i in range(len(met_list)):
         pyg.draw.rect(screen, yellow, (met_list[i][0], met_list[i][1], met_dim, met_dim)) # Function call for drawing meteor
         
 def drop_meteors(met_list, met_dim, width):
     '''Randomly spawns meteors at the top of the screen and tracks their positions in a list.'''
+    
     spawn_chance = random.randrange(0,100) # Random number between 0-100
     x_pos = random.randrange(0, 780) # Random x position across top of screen
+    
     if spawn_chance <= 5: # 5% chance of number being 5 or lower, so the spawn chance is 5%
         met_pos = [x_pos, 0]
         met_list.append(met_pos) # Adds meteor to met_list
@@ -37,21 +39,17 @@ def update_meteor_positions(met_list, height, score, speed):
 
         met_list[i][1] += speed # Adds speed for each meteor
 
-        
-
         if met_list[i][1] > height - 20: # Removes meteor once it hits the bottom of the screen
-            
-
+          
             met_list.remove(met_list[i])
             score += 1
-            
-            
+                
     return score
 
 def detect_collision(meteor, player_pos, player_dim, met_dim):
     '''Checks if the player has collided with a meteor and returns true if it has happened.'''
 
-    if meteor[1] >= 480 and meteor[1] <= 550: # Checks to see if meteor is in the same y coordinate as player, if this is true it test the next conditional
+    if meteor[1] >= 480 and meteor[1] <= 550: # Checks to see if meteor is at a y coordinate where it could collide with the player
 
         if meteor[0] <= player_pos[0] + 50 and meteor[0] >=player_pos[0]: # Checks to see if meteor is in the same x coordinate as player, if this is true then there was a collision
 
@@ -59,9 +57,6 @@ def detect_collision(meteor, player_pos, player_dim, met_dim):
         else:
             return False
     
-    
-    
-
 def collision_check(met_list, player_pos, player_dim, met_dim):
     '''Checks for each meteor to see if it has collided with a meteor using detect_collision(). Returns true if it has happened.'''
 
@@ -73,8 +68,7 @@ def collision_check(met_list, player_pos, player_dim, met_dim):
 
             return True
         else:
-            return False
-            
+            return False          
 
 def main():
     
