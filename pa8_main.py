@@ -49,11 +49,16 @@ def update_meteor_positions(met_list, height, score, speed):
 def detect_collision(meteor, player_pos, player_dim, met_dim):
     '''Checks if the player has collided with a meteor and returns true if it has happened.'''
 
-    if meteor[1] >= 480 and meteor[1] <= 550: # Checks to see if meteor is at a y coordinate where it could collide with the player
+    if meteor[1] >= 480 and meteor[1] <= 550:
 
-        if meteor[0] <= player_pos[0] + 50 and meteor[0] >=player_pos[0]: # Checks to see if meteor is in the same x coordinate as player, if this is true then there was a collision
+        if meteor[0] <= player_pos[0] + 50 and meteor[0] >= player_pos[0]:
 
             return True
+
+
+        elif meteor[0] + 20 <= player_pos[0] + 50 and meteor[0] + 20 >= player_pos[0]: 
+
+                return True
         else:
             return False
     
