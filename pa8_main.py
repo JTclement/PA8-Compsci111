@@ -3,7 +3,7 @@ import random
 
 
 def set_speed(f_score):
-    
+    '''Sets the speed of the meteors falling dependent on the score of the game.'''
 
     if f_score < 2:
         speed = 10
@@ -12,10 +12,12 @@ def set_speed(f_score):
     return speed
 
 def draw_meteors(met_list, met_dim, screen, yellow):
+    '''Draws the meteors according to their locations on the screen.'''
     for i in range(len(met_list)):
         pyg.draw.rect(screen, yellow, (met_list[i][0], met_list[i][1], met_dim, met_dim))
         
 def drop_meteors(met_list, met_dim, width):
+    '''Randomly spawns meteors at the top of the screen and tracks their positions in a list.'''
     spawn_chance = random.randrange(0,100)
     x_pos = random.randrange(0, 780)
     if spawn_chance <= 5:
@@ -23,7 +25,7 @@ def drop_meteors(met_list, met_dim, width):
         met_list.append(met_pos)
 
 def update_meteor_positions(met_list, height, score, speed):
-
+    '''Increases the y position of each meteor on the screen by the meteor speed, and removes meteors that hit the ground.'''
     for i in range(len(met_list)-1):
 
         met_list[i][1] += speed
@@ -40,7 +42,7 @@ def update_meteor_positions(met_list, height, score, speed):
     return score
 
 def detect_collision(meteor, player_pos, player_dim, met_dim):
-    
+    '''Checks if the player has collided with a meteor and returns true if it has happened.'''
 
     if meteor[1] >= 480 and meteor[1] <= 550:
 
@@ -54,7 +56,7 @@ def detect_collision(meteor, player_pos, player_dim, met_dim):
     
 
 def collision_check(met_list, player_pos, player_dim, met_dim):
-    
+    '''Checks for each meteor to see if it has collided with a meteor using detect_collision(). Returns true if it has happened.'''
 
     for meteor in met_list:
 
